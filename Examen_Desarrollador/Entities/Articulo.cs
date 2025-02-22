@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Examen_Desarrollador.Entitys
+namespace Examen_Desarrollador.Entities
 {
     public class Articulo
     {
@@ -17,7 +17,7 @@ namespace Examen_Desarrollador.Entitys
         public required int Stock { get; set; }
 
         // Relación con Tienda y Cliente
-        public ICollection<Articulo_tienda> TiendaArticulos { get; set; }
-        public ICollection<Cliente_articulo> ClienteArticulos { get; set; }
+        //public ICollection<Articulo_tienda> TiendaArticulos { get; set; }
+        //public ICollection<Cliente_articulo> ClienteArticulos { get; set; }
     }
 }

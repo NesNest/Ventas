@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Examen_Desarrollador.Entitys
+namespace Examen_Desarrollador.Entities
 {
     public class Cliente
     {
@@ -10,6 +10,6 @@ namespace Examen_Desarrollador.Entitys
         public required string Direccion { get; set; }
 
         // Relación con Articulos
-        public ICollection<Cliente_articulo> Cliente_articulos { get; set; }
+        //public ICollection<Cliente_articulo> Cliente_articulos { get; set; }
     }
 }

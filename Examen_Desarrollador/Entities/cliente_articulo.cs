@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Examen_Desarrollador.Entitys
+namespace Examen_Desarrollador.Entities
 {
     public class Cliente_articulo
     {

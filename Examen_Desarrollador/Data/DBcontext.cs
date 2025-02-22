@@ -1,17 +1,20 @@
-﻿using Examen_Desarrollador.Entitys;
+﻿using Examen_Desarrollador.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Examen_Desarrollador.Data
 {
     public class DBcontext: DbContext
     {
+        //Constructor
         public DBcontext(DbContextOptions<DBcontext> options): base(options) {}
         //Entidades
-        public DbSet<Entitys.Cliente> Clientes { get; set; }
-        public DbSet<Entitys.Tienda> Tiendas { get; set; }
-        public DbSet<Entitys.Articulo> Articulos { get; set; }
-        public DbSet<Entitys.Articulo_tienda> TiendaArticulos { get; set; }
-        public DbSet<Entitys.Cliente_articulo> ClienteArticulos { get; set; }
+        public DbSet<Entities.Cliente> Clientes { get; set; }
+        public DbSet<Entities.Tienda> Tiendas { get; set; }
+        public DbSet<Entities.Articulo> Articulos { get; set; }
+        public DbSet<Entities.Articulo_tienda> TiendaArticulos { get; set; }
+        public DbSet<Entities.Cliente_articulo> ClienteArticulos { get; set; }
+        
+        //Configuración de la clave compuesta
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

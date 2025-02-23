@@ -361,3 +361,56 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# Compiled output
+dist
+tmp
+out-tsc
+
+# Dependencies
+node_modules
+
+# Angular specific
+.angular
+
+# Compiled JavaScript files
+*.js
+*.js.map
+
+# Compiled CSS files
+*.css
+*.css.map
+
+# IDE files
+.vscode/
+.idea/
+
+# Logs
+logs
+*.log
+
+# Temporary files
+tmp/
+*.tmp
+*.swp
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Miscellaneous
+.DS_Store
+*.bak
+Thumbs.db
+
+# Coverage directory used by tools like istanbul
+coverage/
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache

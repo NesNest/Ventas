@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavComponent } from '../../layout/nav/nav.component';
 import { CommonModule } from '@angular/common';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../services/authServices/user.service';
 
 @Component({
   selector: 'app-home',

@@ -1,6 +1,6 @@
 import { Component, NgModule, inject } from '@angular/core';
 import { RouterOutlet, RouterModule, Routes } from '@angular/router';
-import { TiendaService } from './tienda.service';
+import { TiendaService } from './services/entitiesServices/tienda.service';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './pages/home/home.component';
 import { FooterComponent} from './layout/footer/footer.component';

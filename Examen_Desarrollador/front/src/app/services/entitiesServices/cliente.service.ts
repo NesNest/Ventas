@@ -23,6 +23,7 @@ export class ClienteService {
   public updateCliente(id: number, cliente: Clientes): Observable<void> {
     return this.http.put<void>(`${this.URLbase}/${id}`, cliente);
   }
+
   public deleteCliente(id: number): Observable<void> {
     return this.http.delete<void>(`${this.URLbase}/${id}`);
   }

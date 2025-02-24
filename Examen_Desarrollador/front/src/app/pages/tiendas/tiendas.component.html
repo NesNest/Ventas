@@ -3,13 +3,17 @@
   <table>
     <thead>
       <tr>
+        <th>ID</th>
         <th>Nombre</th>
+        <th>Dirección</th>
         <th>Acciones</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let tienda of tiendas">
+        <td>{{tienda.tienda_id}}</td>
         <td>{{tienda.nombre}}</td>
+        <td>{{tienda.direccion}}</td>
         <td>
           <button (click)="updateTienda(tienda.tienda_id, tienda)">Actualizar</button>
           <button (click)="deleteTienda(tienda.tienda_id)">Eliminar</button>

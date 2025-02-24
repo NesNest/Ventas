@@ -1,12 +1,12 @@
 export class Articulo {
-  id: number;
+  articulo_id: number;
   nombre: string;
   descripcion: string;
   precio: number;
   stock: number;
 
-  constructor(id: number, nombre: string, descripcion: string, precio: number, stock: number) {
-    this.id = id;
+  constructor(articulo_id: number, nombre: string, descripcion: string, precio: number, stock: number) {
+    this.articulo_id = articulo_id;
     this.nombre = nombre;
     this.descripcion = descripcion;
     this.precio = precio;

@@ -1,5 +1,5 @@
-import { Component, NgModule, inject } from '@angular/core';
-import { RouterOutlet, RouterModule, Routes } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { RouterOutlet, Routes } from '@angular/router';
 import { TiendaService } from './services/entitiesServices/tienda.service';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './pages/home/home.component';

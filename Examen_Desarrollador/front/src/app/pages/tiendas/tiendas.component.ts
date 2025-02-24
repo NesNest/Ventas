@@ -1,9 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { TiendaService } from './../../services/entitiesServices/tienda.service';
 import { Tienda } from '../../models/entitiesModels/tienda/tienda.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-tiendas',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './tiendas.component.html',
   styleUrls: ['./tiendas.component.css']
 })

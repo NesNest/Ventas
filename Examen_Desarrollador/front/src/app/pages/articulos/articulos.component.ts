@@ -1,12 +1,15 @@
 
-import { Component, Injectable, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ArticuloService } from './../../services/entitiesServices/articulo.service';
 import { Articulo } from '../../models/entitiesModels/articulo/articulo.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-articulos',
-  templateUrl: './articulo.component.html',
-  styleUrls: ['./articulo.component.css']
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './articulos.component.html',
+  styleUrls: ['./articulos.component.css']
 })
 export class ArticulosComponent implements OnInit {
   articulos: Articulo[] = [];

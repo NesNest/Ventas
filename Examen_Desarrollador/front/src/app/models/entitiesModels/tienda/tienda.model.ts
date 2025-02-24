@@ -2,9 +2,9 @@ export class Tienda {
   tienda_id: number;
   nombre: string;
   direccion: string;
-  constructor() {
-    this.tienda_id = 0;
-    this.nombre = '';
-    this.direccion = '';
+  constructor(tienda_id: number, nombre: string, direccion: string ) {
+    this.tienda_id = tienda_id;
+    this.nombre = nombre;
+    this.direccion = direccion;
   }
 }

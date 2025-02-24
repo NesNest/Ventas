@@ -1,0 +1,21 @@
+<div>
+  <h2>Tiendas</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let tienda of tiendas">
+        <td>{{tienda.nombre}}</td>
+        <td>
+          <button (click)="updateTienda(tienda.id, tienda)">Actualizar</button>
+          <button (click)="deleteTienda(tienda.id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="addTienda({tienda_id: 0, nombre: 'Nueva Tienda', direccion: 'nueva tienda'})">Añadir Tienda</button>
+</div>

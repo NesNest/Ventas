@@ -3,10 +3,11 @@ import { Component } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../../services/authServices/user.service';
 import { Router, RouterModule } from '@angular/router';
-import { RequestService } from '../../services/authServices/request.service';
+
 
 @Component({
   selector: 'app-login',
+  standalone: true,
   imports: [CommonModule, ReactiveFormsModule, RouterModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
@@ -20,27 +21,20 @@ export class LoginComponent {
       password: ['', Validators.required]
     });
   }
-
   onSubmit() {
     if (this.loginForm.valid) {
       const username = this.loginForm.get('username')?.value;
-      const password = this.loginForm.get('password')?.value;
 
-      const requestData: RequestService = {
-        email: username,
-        password: password
-      };
-      this.userService.authenticateUser(requestData).subscribe(
-        response => {
-          this.userService.setUserLogged(true);
-          this.router.navigate(['/']);
 
-        }
+      this.userService.setUserLogged(true, username);
 
-      )
-    }
-    else {
-      console.error('Invalid credentials');
+      console.log('Usuario guardado:', username);
+
+
+      this.router.navigate(['/']);
+    } else {
+      console.error('Credenciales inválidas');
+   
     }
 
   }

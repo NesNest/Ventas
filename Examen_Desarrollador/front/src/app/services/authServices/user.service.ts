@@ -1,27 +1,34 @@
 import { Injectable } from '@angular/core';
-import { RequestService } from './request.service';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  private isLoggedIn = false;
+  private userLoggedSubject = new BehaviorSubject<boolean>(false);
+  userLogged$ = this.userLoggedSubject.asObservable();
 
-  constructor(private http: HttpClient) { }
-
-  authenticateUser(data: RequestService): Observable<any> {
-    // Aquí harías la llamada a tu backend para autenticar al usuario
-    // Suponiendo que tu backend exponga un endpoint `/api/authenticate`
-    return this.http.post('/api/authenticate', data);
+  constructor() {
+    if (typeof window !== 'undefined') {  
+      const storedUser = localStorage.getItem('username');
+      if (storedUser) {
+        this.userLoggedSubject.next(false);
+      }
+    }
   }
 
-  setUserLogged(value: boolean) {
-    this.isLoggedIn = value;
+  setUserLogged(value: boolean, username?: string) {
+    if (typeof window !== 'undefined') { 
+      if (value && username) {
+        localStorage.setItem('username', username);
+      } else {
+        localStorage.removeItem('username');
+      }
+    }
+    this.userLoggedSubject.next(value);
   }
 
   isUserLogged(): boolean {
-    return this.isLoggedIn;
+    return this.userLoggedSubject.value;
   }
 }

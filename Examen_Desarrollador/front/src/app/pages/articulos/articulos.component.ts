@@ -31,12 +31,22 @@ export class ArticulosComponent implements OnInit {
       this.loadArticulos();
     });
   }
+  updateArticulo(articulo_id: number, articulo: Articulo) {
+    const updatedArticulo = { ...articulo };
+    updatedArticulo.nombre = prompt("Nuevo nombre:", articulo.nombre) || articulo.nombre;
+    updatedArticulo.descripcion = prompt("Nueva dirección:", articulo.descripcion) || articulo.descripcion;
 
-  updateArticulo(id: number, articulo: Articulo): void {
-    this.articuloService.updateArticulo(id, articulo).subscribe(() => {
-      this.loadArticulos();
-    });
-  }
+    const nuevoPrecio = prompt("Nuevo precio:", articulo.precio.toString());
+    updatedArticulo.precio = nuevoPrecio ? parseFloat(nuevoPrecio) : articulo.precio;
+    const nuevoStock = prompt("Nuevo stock:", articulo.stock.toString());
+    updatedArticulo.stock = nuevoStock ? parseInt(nuevoStock, 10) : articulo.stock;
+
+    this.articuloService.updateArticulo(articulo_id, updatedArticulo).subscribe(data => {
+    this.loadArticulos();
+  });
+}
+
+
 
   deleteArticulo(id: number): void {
     this.articuloService.deleteArticulo(id).subscribe(() => {

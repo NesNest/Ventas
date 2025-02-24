@@ -42,14 +42,14 @@ export class ClientesComponent implements OnInit {
       this.loadClientes();
     });
   }
-
   updateCliente(cliente_id: number, cliente: Clientes): void {
-    this.clienteService.updateCliente(cliente_id, cliente).pipe(
-      catchError(error => {
-        console.error('Error al actualizar cliente', error);
-        return of(null);
-      })
-    ).subscribe(() => {
+    const updatedCliente = { ...cliente };
+    updatedCliente.nombre = prompt("Nuevo nombre:", cliente.nombre) || cliente.nombre;
+    updatedCliente.apellido = prompt("Nuevo email:", cliente.apellido) || cliente.apellido;
+    updatedCliente.direccion = prompt("Nuevo email:", cliente.direccion) || cliente.direccion;
+
+
+    this.clienteService.updateCliente(cliente_id, updatedCliente).subscribe(() => {
       this.loadClientes();
     });
   }

@@ -30,9 +30,11 @@ export class TiendasComponent implements OnInit {
       this.loadTiendas();
     });
   }
-
-  updateTienda(id: number, tienda: Tienda): void {
-    this.tiendaService.updateTienda(id, tienda).subscribe(() => {
+  updateTienda(tienda_id: number, tienda: Tienda) {
+    const updatedTienda = { ...tienda };
+    updatedTienda.nombre = prompt("Nuevo nombre:", tienda.nombre) || tienda.nombre;
+    updatedTienda.direccion = prompt("Nueva dirección:", tienda.direccion) || tienda.direccion;
+    this.tiendaService.updateTienda(tienda_id, updatedTienda).subscribe(data => {
       this.loadTiendas();
     });
   }

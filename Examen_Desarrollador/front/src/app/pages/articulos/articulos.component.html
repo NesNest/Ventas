@@ -1,1 +1,23 @@
-<p>articulos works!</p>
+<div>
+  <h2>Artículos</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Descripción</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let articulo of articulos">
+        <td>{{articulo.nombre}}</td>
+        <td>{{articulo.descripcion}}</td>
+        <td>
+          <button (click)="updateArticulo(articulo.articulo_id, articulo)">Actualizar</button>
+          <button (click)="deleteArticulo(articulo.articulo_id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="addArticulo({ articulo_id: 0, nombre: 'Nuevo Artículo', descripcion: 'Descripción del artículo' })">Añadir Artículo</button>
+</div>

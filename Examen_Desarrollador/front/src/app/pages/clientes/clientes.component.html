@@ -1,1 +1,23 @@
-<p>clientes works!</p>
+<div>
+  <h2>Clientes</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.email}}</td>
+        <td>
+          <button (click)="updateCliente(cliente.cliente_id, cliente)">Actualizar</button>
+          <button (click)="deleteCliente(cliente.cliente_id)">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button (click)="addCliente({ cliente_id: 0, nombre: 'Nuevo Cliente', email: 'email@cliente.com' })">Añadir Cliente</button>
+</div>

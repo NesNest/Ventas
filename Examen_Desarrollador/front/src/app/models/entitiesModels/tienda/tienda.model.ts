@@ -5,6 +5,6 @@ export class Tienda {
   constructor() {
     this.tienda_id = 0;
     this.nombre = '';
-    this.direccion = ''; // Inicializa 'direccion'
+    this.direccion = '';
   }
 }
